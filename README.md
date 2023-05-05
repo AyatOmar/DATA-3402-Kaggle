@@ -105,6 +105,7 @@ https://www.kaggle.com/competitions/bike-sharing-demand/data
 * Evaluate the model's performance using the RMSLE metric by comparing the predicted values to the true target values in the test dataset (y_test).
 
 #### Performance Evaluation
+When I submitted the three regression models. They all scored pretty high 
 
 
 

@@ -1,4 +1,3 @@
-https://raw.githubusercontent.com/UTA-DataScience/ProjectTempate/main/UTA-DataScience-Logo.png
 
 # Project Title
 

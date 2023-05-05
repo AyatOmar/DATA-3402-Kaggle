@@ -3,30 +3,42 @@
 # Bike Sharing Demand Regression Models
 
 * This repository is aimed to predict the hourly bike rental demand for a bike-sharing service in a city based on historical data of bike rental usage patterns, weather data, and other factors. The goal is to build 3 regression models that accurately predict bike rental demands.
+https://www.kaggle.com/c/bike-sharing-demand
+
 
 ## Overview
 
-* This section could contain a short paragraph which include the following:
-  * **Definition of the tasks / challenge**  Ex: The task, as defined by the Kaggle challenge is to use a time series of 12 features, sampled daily for 1 month, to predict the next day's price of a stock.
-  * **Your approach** Ex: The approach in this repository formulates the problem as regression task, using deep recurrent neural networks as the model with the full time series of features as input. We compared the performance of 3 different network architectures.
-  * **Summary of the performance achieved** Ex: Our best model was able to predict the next day stock price within 23%, 90% of the time. At the time of writing, the best performance on Kaggle of this metric is 18%.
+* In the Kaggle Bike Sharing Demand challenge, the three machine learning algorithms (Linear Regression, RandomForestRegressor, LGBMRegressor) can be used to predict the total count of bikes rented in a given hour, based on various input features such as the weather, time of day, day of week, etc. 
+* The Kaggle Bike Sharing Demand challenge provides a training dataset with various input features and the corresponding bike rental counts, and a testing dataset without the bike rental counts. The goal is to use the training dataset to build a regression model, and then use the model to predict the bike rental counts in the testing dataset. The submissions are evaluated based on the RMSLE (Root Mean Squared Logarithmic Error) between the predicted and true values.
 
 ## Summary of Workdone
 
-Include only the sections that are relevant an appropriate.
+* Data processing was done to convert the datetime column to each element (year, day, hour, etc..). After visualizing the count feature, skewness was found, taking the natural log of the 'count' variable, the values were transformed to a new scale that was more suitable for analysis. Root Mean Squared Logarithmic Error (RSMLE) function was applied to evaluate the performance of the regression models. Three popular machine learning algoritms were used: Linear Regression, RandomForestRegressor, LGMBRegressor to predict the total count of bikes rented in a given hour.
 
 ### Data
 
 * Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+  * Data Fields
+    * datetime - hourly date + timestamp  
+    * season -  1 = spring, 2 = summer, 3 = fall, 4 = winter 
+    * holiday - whether the day is considered a holiday
+    * workingday - whether the day is neither a weekend nor holiday
+    * weather - 1: Clear, Few clouds, Partly cloudy, Partly cloudy
+    2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
+    3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
+    4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog 
+    * temp - temperature in Celsius
+    * atemp - "feels like" temperature in Celsius
+    * humidity - relative humidity
+    * windspeed - wind speed
+    * casual - number of non-registered user rentals initiated
+    * registered - number of registered user rentals initiated    
+  * Size: 1.12 MB
+  * Instances: A training dataset with 10886 instances (rows) and 12 variables (columns).A testing dataset with 6493 instances (rows) and 9 variables (columns). The target variable "count" is not included in the testing dataset and is instead used by Kaggle to evaluate the performance of the submitted models.
 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
+* 
 
 #### Data Visualization
 
@@ -86,30 +98,20 @@ Seeing Feature Importance per Model
 
 ### Overview of files in repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
-
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+* attempt 2.ipynb: this is my final draft and where my final submission lies
+* Bike Sharing Demand.ipynb: this was the first attempt, trying different visualization techniques 
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+* numpy
+* pandas
+* seaborn
+* matplotlib
+* lightgbm
+* sklearn
 
 ### Data
-
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+* The dataset can be found on the Kaggle website
+https://www.kaggle.com/competitions/bike-sharing-demand/data
 
 ### Training
 
@@ -123,7 +125,10 @@ Seeing Feature Importance per Model
 ## Citations
 
 * Provide any references.
-
+* I used the CloudML youtube channel for help with data processing for applying the regression models, as well as the RSMLE error: https://www.youtube.com/watch?v=6HVCuXrsQBs&t=4639s
+* https://www.analyticsvidhya.com/blog/2015/06/solution-kaggle-competition-bike-sharing-demand/
+* https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
+* 
 
 
 

@@ -2,8 +2,7 @@
 
 # Bike Sharing Demand Regression Models
 
-* **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
-"Get Rich" Kaggle challenge (provide link). 
+* This repository is aimed to predict the hourly bike rental demand for a bike-sharing service in a city based on historical data of bike rental usage patterns, weather data, and other factors. The goal is to build 3 regression models that accurately predict bike rental demands.
 
 ## Overview
 

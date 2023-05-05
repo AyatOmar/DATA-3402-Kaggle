@@ -114,7 +114,7 @@ https://www.kaggle.com/competitions/bike-sharing-demand/data
 * I used the CloudML youtube channel for help with data processing for applying the regression models, as well as the RSMLE error: https://www.youtube.com/watch?v=6HVCuXrsQBs&t=4639s
 * https://www.analyticsvidhya.com/blog/2015/06/solution-kaggle-competition-bike-sharing-demand/
 * https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
-* 
+
 
 
 

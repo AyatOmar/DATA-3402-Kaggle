@@ -30,7 +30,7 @@ Include only the sections that are relevant an appropriate.
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+![image](https://user-images.githubusercontent.com/111785493/236442563-00d4c889-d777-4e0b-8dea-5878ec504d99.png)
 
 ### Problem Formulation
 
@@ -51,11 +51,23 @@ Show a few visualization of the data and say a few words about what you see.
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+*** Comparing RSMLE Error values 
+* Linear Regression Model: 1.0762005118946756
+* RandomForestRegressor: 0.3389129572301837
+* LGMBRegressor: 0.32138335330531576
+
+Seeing Feature Importance per Model
+* Linear Regression Model:
+![image](https://user-images.githubusercontent.com/111785493/236443009-25d5804a-b0c3-433f-aafb-e4762cba3b65.png)
+* RandomForestRegressor:
+![image](https://user-images.githubusercontent.com/111785493/236443063-83fd7e18-36a6-43d2-8adc-1cb349ead6ac.png)
+* LGMBRegressor:
+![image](https://user-images.githubusercontent.com/111785493/236443086-fb5a23fa-8719-428b-812f-0788fc44c95f.png)
+
 
 ### Conclusions
+
+
 
 * State any conclusions you can infer from your work. Example: LSTM work better than GRU.
 

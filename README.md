@@ -67,7 +67,7 @@ https://www.kaggle.com/c/bike-sharing-demand
 
 ### Conclusions
 
-
+The Linear Regression Model has a RMSLE score of 1.0762, while the RandomForestRegressor and LGMBRegressor models have RMSLE scores of 0.3389 and 0.3214 respectively. This indicates that the RandomForestRegressor and LGMBRegressor models are better at predicting the demand for bike sharing compared to the Linear Regression Model.
 
 
 ### Future Work

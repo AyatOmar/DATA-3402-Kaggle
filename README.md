@@ -38,28 +38,25 @@ https://www.kaggle.com/c/bike-sharing-demand
 
 #### Preprocessing / Clean up
 
-* 
+* before data processing
+![image](https://user-images.githubusercontent.com/111785493/236451979-800cbc87-0cb5-4c86-a6d0-b4d96676622d.png)
+* after data processing
+![image](https://user-images.githubusercontent.com/111785493/236452028-32c25d45-4f5c-448d-8c25-e66a403f4485.png)
+
+* By taking the natural logarithm of the 'count' variable, the values are transformed to a new scale that is more suitable for analysis, particularly when dealing with data that exhibits a wide range of values. The transformation is a common technique in data analysis, especially when the response variable is count data, to improve model fit and to reduce the effect of outliers.
 
 #### Data Visualization
 
 ![image](https://user-images.githubusercontent.com/111785493/236442563-00d4c889-d777-4e0b-8dea-5878ec504d99.png)
 
 ### Problem Formulation
+* Linear Regression: Linear regression is a simple, yet effective model for regression problems, especially when the relationship between the input variables and the output variable is linear. In this case, linear regression can capture the linear relationship between the bike rental demand and the input variables, such as temperature, humidity, and windspeed.
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+* Random Forest Regressor: Random Forest Regressor is an ensemble learning algorithm that can handle non-linear relationships between the input variables and the output variable. It builds multiple decision trees on different subsets of the input data and combines their predictions to make a final prediction. In this case, Random Forest Regressor can capture the non-linear relationships between the bike rental demand and the input variables, which may not be captured by a linear model.
 
-### Training
-
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+* LightGBM Regressor: LightGBM Regressor is a gradient boosting algorithm that uses histogram-based binning and other optimizations to improve training speed and memory usage. It is a powerful algorithm that can handle large datasets and complex models. In this case, LightGBM Regressor can handle the large number of input variables and their interactions, which may not be captured by simpler models such as linear regression.
+ 
+* Using a combination of linear and non-linear models such as Linear Regression, Random Forest Regressor, and LightGBM Regressor can help capture the various relationships between the input variables and the output variable and improve the accuracy of the predictions.
 
 ### Performance Comparison
 
@@ -68,33 +65,18 @@ https://www.kaggle.com/c/bike-sharing-demand
 * RandomForestRegressor: 0.3389129572301837
 * LGMBRegressor: 0.32138335330531576
 
-Seeing Feature Importance per Model
-* Linear Regression Model:
-![image](https://user-images.githubusercontent.com/111785493/236443009-25d5804a-b0c3-433f-aafb-e4762cba3b65.png)
-* RandomForestRegressor:
-![image](https://user-images.githubusercontent.com/111785493/236443063-83fd7e18-36a6-43d2-8adc-1cb349ead6ac.png)
-* LGMBRegressor:
-![image](https://user-images.githubusercontent.com/111785493/236443086-fb5a23fa-8719-428b-812f-0788fc44c95f.png)
-
-
 ### Conclusions
 
 
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+* There are so many more regression models that can be tried and compared, If I had more time, I would definitely try other machine learning algorithms such as Gradient Boosting Regressor, Support Vector Regressor, XGBoost Regressor.
 
 ## How to reproduce results
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
+* Reproducing the training on different models is very simple, in the code there is a function called 'evaluate' that takes a machine learning model input and optional paramaters (name and values). The function prints the name of the model class and its RMSLE score on the test dataset, and returns the trained model object and its predictions on the test datase
 
 ### Overview of files in repository
 
@@ -114,12 +96,16 @@ Seeing Feature Importance per Model
 https://www.kaggle.com/competitions/bike-sharing-demand/data
 
 ### Training
-
-* Describe how to train the model
+* The training for each model took a few seconds. 
+* Load the training dataset and split it into features and target variables (X_train and y_train, respectively).
+* Preprocess the data as necessary (e.g. scale the numerical features, encode categorical variables).
+* Instantiate the chosen model class with any desired hyperparameters.
+* Train the model using the fit method, passing in the training features (X_train) and targets (y_train).
+* Once the model is trained, use it to make predictions on the test dataset (X_test).
+* Evaluate the model's performance using the RMSLE metric by comparing the predicted values to the true target values in the test dataset (y_test).
 
 #### Performance Evaluation
 
-* Describe how to run the performance evaluation.
 
 
 ## Citations
